@@ -249,7 +249,7 @@ static NSDateFormatter *_displayFormatter = nil;
     [[self class] initializeStatics];
     
     if ([format isEqualToString:kNSDateHelperFormatISO8601]) {
-        [[[self class] sharedDateFormatter] setLocale:enUSPOSIXLocale];
+        [[[self class] sharedDateFormatter] setLocale:[NSLocale localeWithLocaleIdentifier:@"en_US_POSIX"]];
     }
     [[[self class] sharedDateFormatter] setDateFormat:format];
     NSString *timestamp_str = [[[self class] sharedDateFormatter] stringFromDate:self];
